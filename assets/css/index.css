@@ -14,8 +14,9 @@ html {
 
 body {
     height: calc(100vh - 2rem);
-    margin: 1rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 h1, h2, h3, h4 {
@@ -23,17 +24,16 @@ h1, h2, h3, h4 {
 }
 
 header {
-    position: fixed;
-    transform-origin: top right;
-    transform: rotate(-90deg) translateY(-11rem);
+    margin-right: 1rem;
+    writing-mode: sideways-lr;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 nav {
-    width: 100vh;
-    position: fixed;
-    left: 100vw;
-    transform-origin: top left;
-    transform: rotate(90deg);
+    margin-left: 1rem;
+    writing-mode: sideways-rl;
     display: flex;
     justify-content: center;
     
@@ -55,22 +55,47 @@ section {
     gap: 1rem;
     text-align: right;
     align-items: end;
-    transition: all 1s ease-out;
-
-    p {
-        max-width: 240px;
-    }
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    min-width: 240px;
+    min-width: 219px;
 
     textarea, input {
         resize: none;
         outline: none;
         padding: 0.25rem;
     }
+}
+
+.development {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0 0.5rem;
+    
+    li {
+        list-style: none;
+        margin: 1rem 0;
+    }
+
+    a  {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .description {
+        font-size: 0.75rem;
+    }
+
+    .techs {
+        font-size: 0.5rem;
+    }
+}
+
+.socials {
+    width: 1rem;
+    height: auto;
+    margin: 0.5rem;
 }
