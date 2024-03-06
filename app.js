@@ -2,10 +2,9 @@ import Router from "./Router.js";
 
 export function App() {
     let { hash } = location;
+    let key = hash !== "" ? hash.replace("#/", "") : "home";
 
-    Router.forEach((component) => {
-        if (hash === component.hash) {
-            document.getElementById("root").innerHTML = component.component;
-        }
-    });
+    if (key in Router && hash === Router[key].hash) {
+        document.getElementById("root").innerHTML = Router[key].component;
+    }
 }

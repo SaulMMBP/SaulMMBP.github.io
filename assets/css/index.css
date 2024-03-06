@@ -55,10 +55,22 @@ section {
     gap: 1rem;
     text-align: right;
     align-items: end;
+    transition: all 1s ease-out;
 
     p {
-        max-width: 70%;
+        max-width: 240px;
     }
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 240px;
 
+    textarea, input {
+        resize: none;
+        outline: none;
+        padding: 0.25rem;
+    }
+}
