@@ -22,13 +22,20 @@ h1, h2, h3, h4 {
     font-weight: 400;
 }
 
+header {
+    position: fixed;
+    transform-origin: top right;
+    transform: rotate(-90deg) translateY(-11rem);
+}
+
 nav {
     width: 100vh;
     position: fixed;
-    top: 2rem;
     left: 100vw;
     transform-origin: top left;
     transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
     
     ul {
         list-style: none;
@@ -42,13 +49,7 @@ nav {
     }
 }
 
-header {
-    position: fixed;
-    transform-origin: top right;
-    transform: rotate(-90deg) translateY(-11rem);
-}
-
-.aboutme {
+section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
