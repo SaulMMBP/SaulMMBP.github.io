@@ -25,7 +25,8 @@ h1, h2, h3, h4 {
 
 header {
     margin-right: 1rem;
-    writing-mode: sideways-lr;
+    writing-mode: vertical-rl;
+    rotate: 180deg;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -33,7 +34,7 @@ header {
 
 nav {
     margin-left: 1rem;
-    writing-mode: sideways-rl;
+    writing-mode: vertical-lr;
     display: flex;
     justify-content: center;
     
