@@ -95,7 +95,11 @@ form {
 }
 
 .socials {
-    width: 1rem;
-    height: auto;
-    margin: 0.5rem;
+    min-width: 219px;
+
+    img {
+        width: 2rem;
+        height: auto;
+        margin: 0.5rem;
+    }
 }
