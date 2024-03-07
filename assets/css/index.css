@@ -16,7 +16,7 @@ body {
     height: calc(100vh - 2rem);
     padding: 2rem 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 h1, h2, h3, h4 {
@@ -73,7 +73,7 @@ form {
 
 .development {
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 0 0.5rem;
     
     li {
