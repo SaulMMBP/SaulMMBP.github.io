@@ -21,6 +21,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  KEY_00: ${{ secrets.KEY_00 }}
+  SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
