@@ -2,7 +2,7 @@ import Socials from "./Socials.js";
 
 export default function AboutMe() {
     return `
-    <section>
+    <section class="aboutme">
         <h2>I'm Saul.</h2>
         <p>
             Hi, my name is Saul Malagon Martinez. Born in 1995, Mexico. I love

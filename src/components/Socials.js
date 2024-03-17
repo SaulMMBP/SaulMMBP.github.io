@@ -7,7 +7,7 @@ export default function Socials() {
             a +=
                 "<a href='" +
                 social.url +
-                "'><img src='" +
+                "'><img class='icon' src='" +
                 social.icon +
                 "' alt='" +
                 social.name +
