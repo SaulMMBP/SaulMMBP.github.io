@@ -1,102 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    color-scheme: light dark;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --logo-top: calc(50vh - 25vw);
+    --logo-left: calc(50vw - 25vw);
 
-    font-optical-sizing: auto;
-    font-family: "Montserrat", sans-serif;
-
-    text-decoration: none;
-    color: black;
+    --nav-radius: -40vw;
 }
 
-html {
-    height: 100vh;
-    overflow: hidden;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    height: calc(100vh - 2rem);
-    margin: 1rem 2rem 1rem 1rem;
-    border: 1px solid black;
+    height: 100vh;
+    background-color: light-dark(rgb(238, 238, 238), rgb(17, 17, 17));
 }
 
-header {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 1.5rem;
+img {
+    width: 100%;
+    height: auto;
 }
+
+.logo {
+    width: 50vw;
+    max-width: 30vh;
+    position: absolute;
+    z-index: 3;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    top: var(--logo-top);
+    left: var(--logo-left);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    box-shadow: 0 0 8px rgb(27, 27, 27),
+                0 0 0 8px white,
+                0 0 8px 8px rgb(128, 128, 128);
+
+    &.close {
+        width: 2.5rem;
+        top: 1rem;
+        left: 1rem;
+        box-shadow: 0 0 3px rgb(27, 27, 27),
+                        0 0 0 4px white,
+                        0 0 3px 2px rgb(128, 128, 128);
+    }
+
+    &.btn {
+        cursor: pointer;
+    }
+}
+
 
 nav {
-    height: calc(100vh - 2rem);
-    position: fixed;
-    top: 0;
-    right: 0.5rem;
-    writing-mode: vertical-lr;
-    
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    z-index: 2;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
     ul {
-        list-style: none;
         display: flex;
-        place-content: center;
-        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        li {
+            width: 2.5rem;
+            aspect-ratio: 1;
+            list-style: none;
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            box-shadow: 0 0 3px rgb(27, 27, 27),
+                        0 0 0 4px white,
+                        0 0 3px 2px rgb(128, 128, 128);
+            
+            &:nth-child(1) {
+                translate: calc(var(--nav-radius) * sin(45deg)) calc(var(--nav-radius) * cos(45deg));
+            }
+            
+            &:nth-child(2) {
+                translate: 0 var(--nav-radius);
+            }
+            
+            &:nth-child(3) {
+                translate: calc(var(--nav-radius) * sin(45deg) * -1) calc(var(--nav-radius) * cos(45deg));
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &.hidden {
+                translate: 0 0;
+            }
+        }
     }
+
+    &.hidden {
+        visibility: hidden;
+        opacity: 0;
+        top: 4rem;
+        left: 4rem;
+    }
+
 }
 
 main {
     height: 100%;
-}
-
-section {
-    height: 100%;
-    overflow-y: auto;
-    padding: 0.5rem;
-    
-    h2 {
-        position: sticky;
-        top: 0;
-        text-align: right;
-        padding: 0 0.5rem 0.5rem;
+    padding: 0 1rem;
+    section {
+        height: 100%;
     }
 }
 
-h1, h2, h3 {
-    font-weight: 500;
-}
-
-.aboutme {
-    p {
-        margin-bottom: 1rem;
-    }
-}
-
-.development .projects {
-    list-style: none;
+.contact-section {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    .project {
-        height: 240px;
-        min-width: 294px;
-        padding: 0.5rem;
-        border: 1px solid black;
+    form {
+        max-width: 90vh;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
 
-        .description {
-            max-width: 240px;
+        input, textarea, button {
+            padding: 0.8rem;
+            outline: none;
+            border: 1px solid light-dark(black, white);
+            border-radius: 10px;
+            resize: none;
+            background-color: transparent;
         }
 
-        .techs {
-            font-size: x-small;
+        textarea {
+            height: 12rem;
+        }
+
+        button {
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(34, 34, 34);
+            }
         }
     }
 }
 
-.socials {
-    text-align: right;
-    img {
-        width: 1.25rem;
-        margin: 0 0.25rem;
+
+@media screen and (min-aspect-ratio: 2/3) {
+    :root {
+        --logo-top: calc(50vh - 15vh);
+        --logo-left: calc(50vw - 15vh);
+
+        --nav-radius: -25vh;
     }
 }

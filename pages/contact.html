@@ -8,29 +8,40 @@
         <link rel="stylesheet" href="/assets/css/index.css" />
 
         <script src="https://kit.fontawesome.com/18176dcf81.js" crossorigin="anonymous"></script>
+        <script src="/index.js"></script>
         <title>SaulMMBP</title>
     </head>
     <body>
         <header>
-            <div class="logo">
+            <div id="logo" class="logo close btn" onclick="openNav()">
                 <div>
                     <img src="/assets/img/perfil.png" alt="logo" />
                 </div>
             </div>
-            <nav>
+            <nav id="nav" class="hidden">
                 <ul>
-                    <li>
+                    <li class="nav-link hidden">
                         <a href="/"><i class="fa-regular fa-face-laugh-beam"></i></a>
                     </li>
-                    <li>
+                    <li class="nav-link hidden">
                         <a href="#dev"><i class="fa-solid fa-code"></i></a>
                     </li>
-                    <li>
+                    <li class="nav-link hidden">
                         <a href="/pages/contact.html"><i class="fa-solid fa-phone"></i></a>
                     </li>
                 </ul>
             </nav>
         </header>
-        <script type="module" src="/index.js"></script>
+        <main>
+            <section class="contact-section">
+                <form id="contact-form" onsubmit="onSubmit(event)">
+                    <h2>.Contact me</h2>
+                    <input type="text" name="name" id="name" placeholder="nombre" />
+                    <input type="email" name="email" id="email" placeholder="email" />
+                    <textarea name="message" id="message" placeholder="Mensaje"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </main>
     </body>
 </html>
