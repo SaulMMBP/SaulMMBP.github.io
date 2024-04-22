@@ -135,7 +135,7 @@ main {
         gap: 1rem;
         width: 100%;
 
-        input, textarea, button {
+        input, textarea {
             padding: 0.8rem;
             outline: none;
             border: 1px solid light-dark(black, white);
@@ -150,8 +150,14 @@ main {
 
         button {
             cursor: pointer;
+            background-color: white;
+            color: black;
+            padding: 0.8rem;
+            border: 1px solid light-dark(black, white);
+            border-radius: 10px;
             &:hover {
-                background-color: rgb(34, 34, 34);
+                background-color: transparent;
+                color: light-dark(black, white);
             }
         }
     }
