@@ -1,37 +1,54 @@
 let openNav = () => {
-    let logo = document.getElementById("logo");
-    let isClosed = logo.classList.contains("close");
+    let overlay = document.getElementById("mobile-menu");
+    overlay.classList.remove("hide");
+};
 
-    if (isClosed) {
-        logo.classList.remove("close");
-    } else {
-        logo.classList.add("close");
-    }
+let closeNav = () => {
+    let overlay = document.getElementById("mobile-menu");
+    overlay.classList.add("hide");
+};
 
-    let nav = document.getElementById("nav");
-    let isHidden = nav.classList.contains("hidden");
-
-    if (isHidden) {
-        nav.classList.remove("hidden");
-    } else {
-        nav.classList.add("hidden");
-    }
-
-    let navLinks = document.getElementsByClassName("nav-link");
-    Array.prototype.forEach.call(navLinks, (navLink) => {
-        let isHidden = navLink.classList.contains("hidden");
-        if (isHidden) {
-            navLink.classList.remove("hidden", "animate");
-        } else {
-            navLink.classList.add("hidden", "animate");
-        }
-    });
+let redirect = (element) => {
+    setTimeout(() => {
+        let page = `/pages/${element.href.split("#")[1]}.html`;
+        console.log(page);
+        window.location.href = page;
+    }, 1500);
 };
 
 let onSubmit = (event) => {
     event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    let form = document.getElementById("form");
+    let formData = new FormData(form);
+    let obj = Object.fromEntries(formData);
+    let json = JSON.stringify(obj);
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: json,
+    })
+        .then(async (response) => {
+            let json = await response.json();
+            console.log(json.message);
+            // if (response.status == 200) {
+            //     result.innerHTML = json.message;
+            // } else {
+            //     result.innerHTML = json.message;
+            // }
+        })
+        .catch((error) => {
+            console.log(error);
+            // result.innerHTML = "Something went wrong!";
+        })
+        .then(function () {
+            form.reset();
+            // setTimeout(() => {
+            //     result.style.display = "none";
+            // }, 3000);
+        });
 };

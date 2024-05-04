@@ -8,34 +8,152 @@
         <link rel="stylesheet" href="/assets/css/index.css" />
 
         <script src="https://kit.fontawesome.com/18176dcf81.js" crossorigin="anonymous"></script>
-        <script src="/index.js"></script>
+        <script src="/assets/js/index.js"></script>
         <title>SaulMMBP - Dev</title>
     </head>
     <body>
         <header>
-            <div id="logo" class="logo close btn" onclick="openNav()">
-                <div>
-                    <img src="/assets/img/perfil.png" alt="logo" />
-                </div>
+            <div class="logo">
+                <img src="/assets/img/perfil.png" alt="logo image" />
             </div>
-            <nav id="nav" class="hidden">
-                <ul>
-                    <li class="nav-link hidden">
-                        <a href="/"><i class="fa-regular fa-face-laugh-beam"></i></a>
-                    </li>
-                    <li class="nav-link hidden">
-                        <a href="#dev"><i class="fa-solid fa-code"></i></a>
-                    </li>
-                    <li class="nav-link hidden">
-                        <a href="/pages/contact.html"><i class="fa-solid fa-phone"></i></a>
-                    </li>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/dev.html">Dev</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
                 </ul>
+                <button class="menu-btn btn" onclick="openNav()">Menu</button>
+                <div class="overlay hide" id="mobile-menu">
+                    <ul>
+                        <li><a href="/pages/about.html">About</a></li>
+                        <li><a href="/pages/dev.html">Dev</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                    </ul>
+                    <button class="btn circular-btn" onclick="closeNav()">x</button>
+                </div>
             </nav>
+            <h1>サウル</h1>
         </header>
         <main>
-            <section class="dev-section">
+            <div class="dev">
                 <h2>.Development</h2>
-            </section>
+                <div class="skills">
+                    <i class="fa-brands fa-java"></i>
+                    <i class="fa-brands fa-python"></i>
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-html5"></i>
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <img src="https://cdn.simpleicons.org/spring/white" />
+                    <img src="https://cdn.simpleicons.org/nodedotjs/white" />
+                    <img src="https://cdn.simpleicons.org/express/white" />
+                    <img src="https://cdn.simpleicons.org/react/white" />
+                    <img src="https://cdn.simpleicons.org/angular/white" />
+                    <img src="https://cdn.simpleicons.org/mysql/white" />
+                    <img src="https://cdn.simpleicons.org/mongodb/white" />
+                </div>
+                <ul class="projects">
+                    <li class="card">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
+                        </svg>
+                        <div class="card-content">
+                            <h3 class="card-title">Project Title</h3>
+                            <p class="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+                            <div class="card-techs">
+                                <i class="fa-brands fa-java"></i>
+                                <img src="https://cdn.simpleicons.org/spring/333" />
+                                <img src="https://cdn.simpleicons.org/mongodb/333" />
+                                <i class="fa-brands fa-js"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
+                        </svg>
+                        <div class="card-content">
+                            <h3 class="card-title">Project Title</h3>
+                            <p class="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+                            <div class="card-techs">
+                                <i class="fa-brands fa-java"></i>
+                                <img src="https://cdn.simpleicons.org/spring/333" />
+                                <img src="https://cdn.simpleicons.org/mongodb/333" />
+                                <i class="fa-brands fa-js"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
+                        </svg>
+                        <div class="card-content">
+                            <h3 class="card-title">Project Title</h3>
+                            <p class="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+                            <div class="card-techs">
+                                <i class="fa-brands fa-java"></i>
+                                <img src="https://cdn.simpleicons.org/spring/333" />
+                                <img src="https://cdn.simpleicons.org/mongodb/333" />
+                                <i class="fa-brands fa-js"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
+                        </svg>
+                        <div class="card-content">
+                            <h3 class="card-title">Project Title</h3>
+                            <p class="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+                            <div class="card-techs">
+                                <i class="fa-brands fa-java"></i>
+                                <img src="https://cdn.simpleicons.org/spring/333" />
+                                <img src="https://cdn.simpleicons.org/mongodb/333" />
+                                <i class="fa-brands fa-js"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
+                        </svg>
+                        <div class="card-content">
+                            <h3 class="card-title">Project Title</h3>
+                            <p class="card-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+                            <div class="card-techs">
+                                <i class="fa-brands fa-java"></i>
+                                <img src="https://cdn.simpleicons.org/spring/333" />
+                                <img src="https://cdn.simpleicons.org/mongodb/333" />
+                                <i class="fa-brands fa-js"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </main>
     </body>
 </html>
