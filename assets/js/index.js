@@ -1,24 +1,7 @@
-let openNav = () => {
-    let overlay = document.getElementById("mobile-menu");
-    overlay.classList.remove("hide");
-};
-
-let closeNav = () => {
-    let overlay = document.getElementById("mobile-menu");
-    overlay.classList.add("hide");
-};
-
-let redirect = (element) => {
-    setTimeout(() => {
-        let page = `/pages/${element.href.split("#")[1]}.html`;
-        console.log(page);
-        window.location.href = page;
-    }, 1500);
-};
-
 let onSubmit = (event) => {
     event.preventDefault();
 
+    let state = document.getElementById("state");
     let form = document.getElementById("form");
     let formData = new FormData(form);
     let obj = Object.fromEntries(formData);
@@ -32,23 +15,24 @@ let onSubmit = (event) => {
         },
         body: json,
     })
-        .then(async (response) => {
-            let json = await response.json();
-            console.log(json.message);
-            // if (response.status == 200) {
-            //     result.innerHTML = json.message;
-            // } else {
-            //     result.innerHTML = json.message;
-            // }
+        .then((response) => {
+            if (response.status == 200) {
+                state.innerHTML = '<i class="fa-solid fa-circle-check"></i> Success []~(￣▽￣)~*';
+            } else {
+                state.innerHTML =
+                    '<i class="fa-solid fa-circle-exclamation"></i> An error ocurred! (っ °Д °;)っ';
+            }
         })
         .catch((error) => {
-            console.log(error);
-            // result.innerHTML = "Something went wrong!";
+            state.innerHTML =
+                '<i class="fa-solid fa-circle-exclamation"></i> An error ocurred! (っ °Д °;)っ';
         })
-        .then(function () {
+        .then(() => {
             form.reset();
-            // setTimeout(() => {
-            //     result.style.display = "none";
-            // }, 3000);
+            setTimeout(() => {
+                state.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send';
+            }, 5000);
         });
 };
+
+document.getElementById("form").addEventListener("submit", onSubmit);

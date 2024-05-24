@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackside+One&display=swap');
+
+:root {
+    --white: #e8e8e8;
+    --black: #212121;
+    
+    font-size: 24px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Slackside One", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    text-decoration: none;
+    color: var(--white);
+}
+
+body {
+    height: 100vh;
+    padding: 0.5rem;
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.logo {
+    width: 1.7rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--white);
+    box-shadow: 0 0 3px rgb(27, 27, 27),
+                0 0 0 4px white,
+                0 0 3px 2px rgb(128, 128, 128);
+    
+    &.big {
+        width: 50vw;
+        max-width: 30vh;
+        box-shadow: 0 0 8px rgb(27, 27, 27),
+                    0 0 0 8px white,
+                    0 0 8px 8px rgb(128, 128, 128);
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
+header {
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    text-align: right;
+
+    h1 {
+        margin-bottom: -1rem;
+        padding: 0;
+    }
+
+    span {
+        font-size: 0.5rem;
+    }
+}
+
+nav {
+    position: absolute;
+    
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            position: absolute;
+            list-style: none;
+
+            &:nth-child(1) {
+                transform: rotate(288deg) translateY(-23vh) rotate(-288deg);
+            }
+
+            &:nth-child(2) {
+                transform: rotate(216deg) translateY(-23vh) rotate(-216deg);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(144deg) translateY(-23vh) rotate(-144deg);
+            }
+
+            &:nth-child(4) {
+                transform: rotate(72deg) translateY(-23vh) rotate(-72deg);
+            }
+
+            &:nth-child(5) {
+                transform: translateY(-23vh);
+            }
+        }
+    }
+}
+
+a {
+    i:hover {
+        color: #e8e8e8c0;
+        scale: 1.1;
+    }
+
+    img:hover {
+        color: #e8e8e8c0;
+        scale: 1.1;
+    }
+}
+
+.contact-header {
+    top: 0;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .logo {
+        margin-top: 0.8rem;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100vh;
+    max-width: 100%;
+    text-align: right;
+}
+
+input, textarea {
+    padding: 0.4rem 2rem;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    font-size: 1rem;
+}
+
+textarea {
+    height: 240px;
+}
+
+.h-captcha {
+    align-self: flex-start;
+}
+
+button {
+    font-size: 1rem;
+    color: var(--black);
+    padding: 0.25rem 1rem 0.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    i {
+        color: inherit;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    textarea {
+        height: 128px;
+    }
+}
