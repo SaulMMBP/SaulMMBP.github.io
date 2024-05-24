@@ -1,5 +1,6 @@
 let onSubmit = (event) => {
     event.preventDefault();
+    event.stopPropagation();
 
     let state = document.getElementById("state");
     let form = document.getElementById("form");
